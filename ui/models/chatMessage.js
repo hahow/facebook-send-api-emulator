@@ -32,7 +32,7 @@ module.exports = function(model) {
                         message.type = "compact-list";
                     } else {
                         message.type = "list-template";
-                        payload.top_element = payload.elements.pop();
+                        payload.top_element = payload.elements.shift();
                     }
                 }
             }
