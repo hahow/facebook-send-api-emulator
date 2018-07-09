@@ -166,4 +166,16 @@ module.exports = function (app, config, chatWorker) {
             result: "success"
         });
     })
+
+    app.get("/m.me", function(request, response) {
+        var { ref } = request.query;
+
+        const webHook = new WebHook(chatWorker);
+
+        webHook.dispatch({
+          ref
+        });
+
+        response.status("201").send();
+    });
 }
