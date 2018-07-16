@@ -1,4 +1,4 @@
-const webServerPort = process.env["SendApi.Port"] || 3000;
+const webServerPort = process.env["SendApi.Port"] || 3030;  // 與 hh-frontend-react 的 /setting 頁的啟用連結相同
 
 const config = require("../services/database").getData("configuration") || {
     webHookUrl: `http://localhost:${webServerPort}/webhook`,
