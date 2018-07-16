@@ -48,6 +48,13 @@ module.exports = function CallbackFactory(psid) {
         }
       })
     }
+    else if (message.ref) {
+      delete callbackData.message;
+
+      Object.assign(callbackData, {
+        referral: { ref: message.ref }
+      });
+    }
     else {
       delete callbackData.message;
       Object.assign(callbackData, {

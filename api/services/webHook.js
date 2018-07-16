@@ -58,7 +58,7 @@ module.exports = function WebHook(chatWorker) {
     console.log("posting", escapedJson)
     var hash = crypto
       .createHmac("sha1", appSecret)
-      .update(new Buffer(escapedJson, "utf-8"))
+      .update(json, "utf-8")
       .digest("hex");
 
     axios({
